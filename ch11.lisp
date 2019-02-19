@@ -26,4 +26,10 @@
   (do* ((x list-of-numbers (rest x))
         (e (first x) (first x))
         (largest e (max largest e)))
-       ((null x) largest)))
+       ((null (rest x)) largest)))
+
+; 11.12
+(defun power-of-2 (n)
+  (do ((result 1 (* result 2))
+       (i n (- i 1)))
+      ((zerop i) result)))
